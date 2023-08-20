@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator.css">
+    <title>My Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input placeholder="0" id="output-screen">
+            <button onclick="Clear()">CL</button>
+            <button onclick="del()">DEL</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">÷</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">x</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="Calculate()" class="equal">=</button>
+        </div>
+    </div>
+    <canvas id="my-canvas"></canvas>
+        <script>
+            let outputScreen = document.getElementById("output-screen");
+            let inputBuffer = "";
+
+            function display(num) {
+                inputBuffer += num
+                outputScreen.value = inputBuffer;
+            }
+
+            function Calculate() {
+                if (inputBuffer === "1808+22") {
+                    outputScreen.value = "Happy Birthday 🎂 ";
+                    inputBuffer = "";
+                } else {
+                    try {
+                        outputScreen.value = eval(inputBuffer);
+                        inputBuffer = outputScreen.value;
+                    } catch (err) {
+                        alert("Invalid");
+                    }
+                }
+            }
+            function Clear() {
+                outputScreen.value = "";
+                inputBuffer = "";
+            }
+            function del() {
+                inputBuffer = inputBuffer.slice(0, -1);
+                outputScreen.value = inputBuffer;
+            }
+        </script>
+
+</body>
+</html>
