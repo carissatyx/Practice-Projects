@@ -34,7 +34,7 @@
         </div>
     </div>
     <canvas id="my-canvas"></canvas>
-        <script>
+<script>
             let outputScreen = document.getElementById("output-screen");
             let inputBuffer = "";
 
@@ -45,7 +45,19 @@
 
             function Calculate() {
                 if (inputBuffer === "1808+22") {
-                    outputScreen.value = "Happy Birthday 🎂 ";
+                    outputScreen.value = "Connected on LI 👋";
+                    inputBuffer = "";
+                    } 
+                else if (inputBuffer === "05-11-22") {
+                    outputScreen.value = "Met in Malaysia 🇲🇾";
+                    inputBuffer = "";
+                    }
+                else if (inputBuffer === "30/06/23") {
+                    outputScreen.value = "Apatu Hackathon";
+                    inputBuffer = "";
+                    }
+                else if (inputBuffer === "23.08.23") {
+                    outputScreen.value = "Happy Birthday! 🎂";
                     inputBuffer = "";
                 } else {
                     try {
